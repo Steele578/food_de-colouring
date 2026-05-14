@@ -86,7 +86,7 @@ public class FoodColoringOverlay extends WidgetItemOverlay
 		if (shouldRenderItemOverlay(config.recolorGiantKrill(), itemId, ItemID.GIANT_KRILL) ||
 				shouldRenderItemOverlay(config.recolorHaddock(), itemId, ItemID.HADDOCK) ||
 				shouldRenderItemOverlay(config.recolorYellowfin(), itemId, ItemID.YELLOWFIN) ||
-				shouldRenderItemOverlay(config.recolorHalibut() != HalibutType.NONE, itemId, ItemID.HALIBUT) ||
+				shouldRenderItemOverlay(config.recolorHalibut(), itemId, ItemID.HALIBUT) ||
 				shouldRenderItemOverlay(config.recolorBluefin(), itemId, ItemID.BLUEFIN) ||
 				shouldRenderItemOverlay(config.recolorMarlin(), itemId, ItemID.MARLIN) ||
 				//shouldRenderItemOverlay(config.recolorSwordtipSquid(), id, ItemID.SWORDTIP_SQUID) ||
@@ -105,12 +105,6 @@ public class FoodColoringOverlay extends WidgetItemOverlay
 				shouldRenderItemOverlay(config.recolorSunlightAntelope(), itemId, ItemID.ANTELOPESUN_COOKED) ||
 				shouldRenderItemOverlay(config.recolorDashingKebbit(), itemId, ItemID.DASHINGKEBBIT_COOKED) ||
 				shouldRenderItemOverlay(config.recolorMoonlightAntelope(), itemId, ItemID.ANTELOPEMOON_COOKED) ||
-
-				// hunter mixes
-				shouldRenderItemOverlay(config.recolorSunlightMothMix(), itemId, ItemID.HUNTER_MIX_SUNMOTH_2DOSE) ||
-				shouldRenderItemOverlay(config.recolorSunlightMothMix(), itemId, ItemID.HUNTER_MIX_SUNMOTH_1DOSE) ||
-				shouldRenderItemOverlay(config.recolorMoonlightMothMix(), itemId, ItemID.HUNTER_MIX_MOONMOTH_2DOSE) ||
-				shouldRenderItemOverlay(config.recolorMoonlightMothMix(), itemId, ItemID.HUNTER_MIX_MOONMOTH_1DOSE))
 		{
 			renderCorrectItemOverlay(graphics, itemId, widgetItem);
 
@@ -189,11 +183,6 @@ public class FoodColoringOverlay extends WidgetItemOverlay
 
 	private Image getReplacementIcon(final int id)
 	{
-		String key = Integer.toString(id);
-		if (config.recolorHalibut() != HalibutType.NONE && id == ItemID.HALIBUT)
-		{
-			key += "_" + config.recolorHalibut().getName();
-		}
 		if (!this.images.containsKey(key))
 		{
 			final URL resourceUrl = FoodColoringPlugin.class.getClassLoader().getResource(key + ".png");
