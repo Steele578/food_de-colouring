@@ -11,7 +11,7 @@ import net.runelite.client.ui.overlay.OverlayManager;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Food Coloring"
+	name = "Food De-Coloring"
 )
 public class FoodDeColoringPlugin extends Plugin
 {
