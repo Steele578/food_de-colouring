@@ -1,5 +1,6 @@
-# Food Coloring
+# Food De-Colouring
 A plugin that recolours cooked Sailing and Hunter foods to have a bit less (colourful) soul to them!
+Credit to the creator of the original Food Coloring plugin Pharros.
 
 ## Features
 * Recolours all cooked Hunter meats!
